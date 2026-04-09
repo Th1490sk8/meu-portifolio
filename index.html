@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio - Thiago Leonice Barbosa | Astroturismo Gratuito</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', 'Calibri', sans-serif;
+            background-color: #e6e6e6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .documento {
+            max-width: 1100px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 50px 40px;
+            border-radius: 4px;
+        }
+        .cabecalho-edital {
+            text-align: right;
+            font-size: 11px;
+            color: #333;
+            border-bottom: 2px solid #1a4d8c;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .titulo-principal {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a4d8c;
+            margin-bottom: 5px;
+        }
+        .subtitulo {
+            text-align: center;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+        }
+        .tabela-dados {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+        .tabela-dados td, .tabela-dados th {
+            border: 1px solid #aaa;
+            padding: 8px 12px;
+            vertical-align: top;
+        }
+        .tabela-dados th {
+            background-color: #eef4ff;
+            width: 30%;
+            text-align: left;
+        }
+        h2 {
+            font-size: 18px;
+            color: #1a4d8c;
+            border-left: 4px solid #ff8c00;
+            padding-left: 12px;
+            margin: 25px 0 15px 0;
+        }
+        .card-imagem {
+            margin: 30px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        .card-imagem img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            display: block;
+        }
+        .legenda, .legenda-astros {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            line-height: 1.5;
+            color: #2c2c2c;
+        }
+        .legenda strong, .legenda-astros strong {
+            color: #1a4d8c;
+        }
+        .tabela-eventos, .tabela-certificados, .tabela-telescopio {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        .tabela-eventos th, .tabela-eventos td,
+        .tabela-certificados th, .tabela-certificados td,
+        .tabela-telescopio th, .tabela-telescopio td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+        .tabela-eventos th, .tabela-certificados th, .tabela-telescopio th {
+            background-color: #eef4ff;
+        }
+        .badge {
+            background-color: #1a4d8c;
+            color: white;
+            font-size: 10px;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .badge-verde { background-color: #2e7d32; }
+        .badge-laranja { background-color: #e65100; }
+        .badge-ouro { background-color: #ff8c00; }
+        .declaracao {
+            margin-top: 35px;
+            padding: 20px;
+            background-color: #fef7e0;
+            border-left: 4px solid #ff8c00;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .assinatura {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 12px;
+        }
+        .anexos {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+        .impacto-box {
+            background-color: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .impacto-item { flex: 1; padding: 10px; min-width: 120px; }
+        .impacto-numero { font-size: 28px; font-weight: bold; color: #2e7d32; }
+        .impacto-texto { font-size: 11px; color: #555; }
+        .destaque-equipamento {
+            background-color: #1a4d8c;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 10px;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+        .instagram-link, .portfolio-link {
+            color: #1a4d8c;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #eef4ff;
+            padding: 2px 6px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .portfolio-link { color: #ff8c00; background-color: #fef7e0; }
+        .instagram-link:hover, .portfolio-link:hover {
+            text-decoration: underline;
+            background-color: #ff8c00;
+            color: white;
+        }
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .documento { box-shadow: none; padding: 1.5cm; max-width: 100%; }
+            .card-imagem { break-inside: avoid; }
+            .impacto-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="documento">
+    
+    <div class="cabecalho-edital">
+        ANEXO 06 – PORTFÓLIO DE ATUAÇÃO ARTÍSTICA E CULTURAL<br>
+        Edital Fluxos Fluminenses 2026 – Nº 09/2026 | SECEC/RJ
+    </div>
+
+    <div class="titulo-principal">PORTFÓLIO – THIAGO LEONICE BARBOSA</div>
+    <div class="subtitulo">
+        Astroturismo Científico no Pico das Agulhas Negras 
+        <span class="badge">UFSC Astronomia</span>
+        <span class="badge">UFSC Astrofísica</span>
+        <span class="badge">CADASTUR Guia de Turismo</span>
+        <span class="badge-verde">♿ Acessível</span>
+        <span class="badge-laranja">🌿 Baixo Impacto</span>
+        <span class="badge-ouro">🎟️ 100% Gratuito</span>
+    </div>
+
+    <table class="tabela-dados">
+        <tr><th>Nome completo</th><td>Thiago Leonice Barbosa</td>
+        <tr><th>Tipo de proponente</th><td>MEI – Microempreendedor Individual</td>
+        <tr><th>Nome da Proposta</th><td>Céu da Mantiqueira: Astroturismo</td>
+        <tr><th>CNAE principal</th><td>7912-1/00 – Guia de turismo</td>
+        <tr><th>Município de sede</th><td>Resende – RJ</td>
+        <tr><th>Formação técnica</th><td>Guia de Turismo CADASTUR | Astronomia UFSC | Astrofísica UFSC</td>
+        <tr><th>Instagram profissional</th><td><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank">@astroturismo.agulhasnegras</a></td>
+    </table>
+
+    <div class="impacto-box">
+        <div class="impacto-item"><div class="impacto-numero">70h</div><div class="impacto-texto">Formação UFSC</div></div>
+        <div class="impacto-item"><div class="impacto-numero">50+</div><div class="impacto-texto">Participantes atendidos</div></div>
+        <div class="impacto-item"><div class="impacto-numero">2</div><div class="impacto-texto">UCs parceiras</div></div>
+        <div class="impacto-item"><div class="impacto-numero">100%</div><div class="impacto-texto">Acessível + Baixo impacto</div></div>
+        <div class="impacto-item"><div class="impacto-numero">8</div><div class="impacto-texto">Eventos Gratuitos</div></div>
+    </div>
+
+    <h2>1. MEMORIAL DESCRITIVO DA TRAJETÓRIA</h2>
+    <p>Sou <strong>Thiago Leonice Barbosa</strong>, Técnico em Turismo com registro no CADASTUR (Guia Regional - RJ e Excursão Nacional - Brasil/América do Sul) e com foco <strong>em Astronomia</strong>. Completei o <strong>Curso de Astronomia e Astronáutica (20h)</strong> e o <strong>Curso de Astrofísica Geral – nível Georges Lemaître (50h)</strong> pela UFSC.</p>
+    <p>Atuo há mais de 2 anos na região do Pico das Agulhas Negras, abrangendo o <strong>Parque Nacional do Itatiaia (PN Itatiaia)</strong> e o <strong>Parque Estadual da Pedra Selada – PEP em Mauá</strong>. Já atendi mais de 50 participantes em eventos gratuitos.</p>
+
+    <h2>2. SOBRE O PROJETO: "CÉU DA MANTIQUEIRA"</h2>
+    <div style="background-color:#eef4ff; padding:20px; border-radius:12px; margin:15px 0;">
+        <ul>
+            <li><strong>8 eventos gratuitos</strong> em 12 meses</li>
+            <li>Locais: PN Itatiaia, PEP Mauá, Parque das Águas (Resende)</li>
+            <li><strong>Acessibilidade:</strong> Libras, áudio descrição, cadeira off-road, sinalização tátil</li>
+            <li><strong>Baixo impacto:</strong> sem fogueiras, sem luz branca, sem lixo, louça reutilizável</li>
+            <li><strong>Público estimado:</strong> mais de 100 participantes</li>
+        </ul>
+    </div>
+
+    <h2>3. FORMAÇÃO TÉCNICA E CIENTÍFICA</h2>
+    <table class="tabela-certificados">
+        <thead><tr><th>Certificação</th><th>Instituição</th><th>Carga horária</th></tr></thead>
+        <tbody>
+            <tr><td>Guia de Turismo CADASTUR</td><td>CADASTUR/Detran-RJ</td><td>Registro 2024</td></tr>
+            <tr><td>Astrofísica Geral (Georges Lemaître)</td><td>UFSC – PROEX</td><td>50h</td></tr>
+            <tr><td>Astronomia e Astronáutica</td><td>UFSC – PROEX</td><td>20h</td></tr>
+            <tr><td>Rio Innovation Week 2023</td><td>IFRJ / Rio Innovation Week</td><td>Evento</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. REGISTRO FOTOGRÁFICO DAS AÇÕES REALIZADAS</h2>
+    <p><strong>📸 Imagens em ordem cronológica - 10 imagens</strong></p>
+
+    <!-- Imagem 1 -->
+    <div class="card-imagem">
+        <img src="imagens/foto1-rioweb.jpg" alt="Rio Innovation Week 2023" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%201%3A%20Rio%20Innovation%20Week%202023%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 1</strong><br>03/10/2023 | Rio Innovation Week 2023 – Rio de Janeiro/RJ<br>Participação com ingresso institucional pelo IFRJ.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 2 -->
+    <div class="card-imagem">
+        <img src="imagens/foto2-certificado-rioweb.jpg" alt="Certificado Rio Innovation Week" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%202%3A%20Certificado%20Rio%20Innovation%20Week%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 2</strong><br>03 a 06/10/2023 | Pier Mauá, Rio de Janeiro/RJ<br>Certificado oficial de participação na 3ª edição do Rio Innovation Week.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 3 -->
+    <div class="card-imagem">
+        <img src="imagens/foto3-crachá-cadastur.jpg" alt="Crachá CADASTUR" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%203%3A%20Crach%C3%A1%20CADASTUR%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 3</strong><br>04/01/2024 | CADASTUR / Detran-RJ<br>Crachá virtual de Guia de Turismo. Categorias: Guia Regional - RJ e Excursão Nacional.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 4 -->
+    <div class="card-imagem">
+        <img src="imagens/foto4-parque-aguas1.jpg" alt="Parque das Águas 1" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%204%3A%20Parque%20das%20%C3%81guas%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 4</strong><br>28/11/2024 | Parque das Águas, Resende – RJ<br>Evento aberto e gratuito de astroturismo urbano.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 5 -->
+    <div class="card-imagem">
+        <img src="imagens/foto5-parque-aguas2.jpg" alt="Parque das Águas 2" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%205%3A%20Parque%20das%20%C3%81guas%202%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 5</strong><br>28/11/2024 | Parque das Águas, Resende – RJ<br>Público interagindo com os equipamentos.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 6 -->
+    <div class="card-imagem">
+        <img src="imagens/foto6-instagram-astrofoto.jpg" alt="Astrofotografia" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%206%3A%20Astrofotografia%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 6</strong><br>09/12/2024 | Pico das Agulhas Negras – PN Itatiaia<br>Sessão de astrofotografia noturna.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 7 -->
+    <div class="card-imagem">
+        <img src="imagens/foto7-instagram-gean.jpg" alt="Instagram com @GEAN" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%207%3A%20Instagram%20%40GEAN%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 7</strong><br>09/12/2024 | Pico das Agulhas Negras – PN Itatiaia<br>Interação com o público (@GEAN e amigos).<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 8 -->
+    <div class="card-imagem">
+        <img src="imagens/foto8-observacao-solar.jpg" alt="Observação Solar PEP Mauá" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%208%3A%20Observa%C3%A7%C3%A3o%20Solar%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 8</strong><br>19/07/2025 | PEP Mauá, Resende/RJ<br>Instrução do uso do telescópio com filtros para observação solar.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 9 -->
+    <div class="card-imagem">
+        <img src="imagens/foto9-grupo-telescopio.jpg" alt="Grupo com telescópio" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%209%3A%20Grupo%20com%20Telesc%C3%B3pio%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 9</strong><br>19/07/2025 | PEP Mauá, Resende/RJ<br>Grupo de participantes em atividade de observação solar.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <!-- Imagem 10 -->
+    <div class="card-imagem">
+        <img src="imagens/foto10-equipamentos.jpg" alt="Equipamentos" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EFOTO%2010%3A%20Equipamentos%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda"><strong>Imagem 10</strong><br>19/07/2025 | Visconde de Mauá, Resende/RJ<br>Telescópio para observação solar e noturna.<br><a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais no Instagram</a></div>
+    </div>
+
+    <h2>5. REGISTROS ASTRONÔMICOS</h2>
+    
+    <!-- Saturno -->
+    <div class="card-imagem">
+        <img src="imagens/saturno.jpg" alt="Saturno" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3ESATURNO%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda-astros">
+            <strong>🪐 Saturno</strong><br>
+            09/12/2024 | Pico das Agulhas Negras – PN Itatiaia<br>
+            Telescópio Celestron NexStar SLT 130 | Ocular 9mm | Método afocal<br>
+            <a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais astrofotografias no Instagram</a>
+        </div>
+    </div>
+
+    <!-- Júpiter -->
+    <div class="card-imagem">
+        <img src="imagens/jupiter.jpg" alt="Júpiter e luas" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a4d8c%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3EJ%C3%9APITER%20E%20LUAS%3C%2Ftext%3E%3C%2Fsvg%3E'">
+        <div class="legenda-astros">
+            <strong>🪐 Júpiter e suas luas</strong><br>
+            09/12/2024 | Pico das Agulhas Negras – PN Itatiaia<br>
+            Luas galileanas: Io, Europa, Ganimedes e Calisto<br>
+            <a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank" class="instagram-link">📷 Ver mais astrofotografias no Instagram</a>
+        </div>
+    </div>
+
+    <h2>6. EQUIPAMENTO: CELESTRON NEXSTAR SLT 130</h2>
+    <div class="destaque-equipamento">🔭 Telescópio utilizado nas sessões gratuitas</div>
+    <table class="tabela-telescopio">
+        <tr><th>Característica</th><th>Especificação</th></tr>
+        <tr><td>Abertura</td><td>130mm</td></tr>
+        <tr><td>Distância focal</td><td>650mm (f/5)</td></tr>
+        <tr><td>Montagem</td><td>Alt-Azimutal motorizada com SkyAlign</td></tr>
+        <tr><td>Banco de dados</td><td>+4.000 objetos</td></tr>
+        <tr><td>Registro fotográfico</td><td>Smartphone acoplado (método afocal)</td></tr>
+    </table>
+
+    <h2>7. DOCUMENTOS COMPROBATÓRIOS</h2>
+    <div class="anexos">
+        <p>📄 Certificado UFSC – Astrofísica Geral (50h)</p>
+        <p>📄 Certificado UFSC – Astronomia e Astronáutica (20h)</p>
+        <p>📄 Certificado IFRJ – Ciência nas trilhas</p>
+        <p>📄 Certificado Rio Innovation Week 2023</p>
+        <p>📄 Crachá Virtual CADASTUR – Guia de Turismo</p>
+    </div>
+
+    <h2>8. LINKS DE TRABALHOS ANTERIORES</h2>
+    <p>📸 <strong>Instagram profissional:</strong> <a href="https://instagram.com/astroturismo.agulhasnegras" target="_blank">@astroturismo.agulhasnegras</a></p>
+    <p>🔭 <strong>Formação UFSC:</strong> Astronomia e Astrofísica</p>
+    <p>🆔 <strong>CADASTUR:</strong> Guia Regional - RJ | Excursão Nacional</p>
+    <p>📄 <strong>Portfólio completo online:</strong> <a href="#" class="portfolio-link">📂 Clique aqui para acessar o portfólio completo do proponente</a> (documento atual em formato HTML/CSS, compatível com edital SECEC/RJ)</p>
+
+    <h2>9. DECLARAÇÃO DE VERACIDADE</h2>
+    <div class="declaracao">
+        <p>Declaro, sob as penas da Lei Federal nº 14.399/2022 e do Edital Fluxos Fluminenses 2026 nº 09/2026, que as informações, imagens e documentos são verdadeiros.</p>
+    </div>
+
+    <div class="assinatura">
+        Resende/RJ, 09 de abril de 2026.<br><br>
+        _________________________________<br>
+        <strong>Thiago Leonice Barbosa</strong><br>
+        MEI – Guia de Turismo CADASTUR<br>
+        Formação: Astronomia e Astrofísica UFSC
+    </div>
+
+    <footer>
+        Portfólio conforme ANEXO 06 do Edital Fluxos Fluminenses 2026 – SECEC/RJ<br>
+        🎟️ 8 EVENTOS 100% GRATUITOS | ♿ ACESSÍVEL | 🌿 BAIXO IMPACTO | 🌌 +100 PARTICIPANTES
+    </footer>
+</div>
+</body>
+</html>
